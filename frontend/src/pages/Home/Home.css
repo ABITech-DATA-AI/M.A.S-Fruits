@@ -1,0 +1,303 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  overflow: hidden;
+  background: #0f3d1a;
+  padding: 0 0 40px;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+}
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  mix-blend-mode: soft-light;
+  background: radial-gradient(ellipse 1000px 600px at 26% 4%, rgba(255, 214, 120, 1), transparent 62%),
+    linear-gradient(180deg, rgba(150, 205, 255, 0.7) 0%, rgba(255, 210, 140, 0.5) 40%, transparent 72%);
+}
+
+/* Brush headline */
+.headline { margin-bottom: 6px; }
+.headline .l1 {
+  font-family: var(--font-brush);
+  font-size: clamp(24px, 3.4vw, 42px);
+  color: var(--leaf-green);
+  -webkit-text-stroke: 2px var(--white);
+  paint-order: stroke fill;
+  transform: rotate(-2deg);
+  display: inline-block;
+  filter: drop-shadow(3px 4px 0 rgba(0, 0, 0, 0.35));
+}
+.headline .l2 {
+  font-family: var(--font-brush);
+  font-size: clamp(38px, 5.6vw, 68px);
+  color: var(--dark-green);
+  -webkit-text-stroke: 3px var(--white);
+  paint-order: stroke fill;
+  line-height: 0.95;
+  display: block;
+  transform: rotate(-2deg);
+  filter: drop-shadow(4px 6px 0 rgba(0, 0, 0, 0.4));
+  margin-top: -4px;
+}
+.headline .l3 {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--font-poster);
+  font-size: clamp(14px, 1.7vw, 21px);
+  letter-spacing: 0.5px;
+  background: var(--gold);
+  color: var(--dark-green);
+  padding: 7px 20px 5px;
+  border-radius: 6px 16px 6px 16px;
+  transform: rotate(-2deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.95fr 1fr 0.95fr;
+  gap: 22px;
+  align-items: center;
+  width: 100%;
+  padding-top: clamp(120px, 17vh, 170px);
+}
+.hero-grid-col {
+  display: flex;
+  justify-content: center;
+}
+.hero-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 150px;
+}
+.hero-center .hero-actions {
+  justify-content: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(38px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 700;
+}
+.hero h1 .script {
+  display: block;
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--gold);
+  transform: rotate(-3deg);
+  font-size: 1.15em;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+.hero .sub {
+  display: inline-block;
+  margin-top: 6px;
+  background: var(--gold);
+  color: var(--dark-green);
+  padding: 6px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+  transform: rotate(-1deg);
+  font-size: clamp(15px, 2vw, 20px);
+}
+.hero-actions {
+  margin-top: clamp(12px, 2vh, 20px);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Hero mini image grid (the 6 individually-editable circles) ---------- */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 1.1vw, 14px);
+  margin-top: clamp(12px, 2vh, 22px);
+  max-width: 360px;
+  padding-top: 150px;
+}
+.mini-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 6px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.mini-card .circle {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--cream);
+  margin-bottom: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.mini-card .label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: var(--dark-green);
+  color: var(--gold);
+  font-size: clamp(8px, 0.95vw, 9.5px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.1px;
+  border-radius: 12px;
+  padding: 5px 4px;
+  white-space: normal;
+  min-height: 26px;
+}
+.mini-card .label-icon {
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.hero-feature {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+.feature-circle {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 6px solid var(--gold);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+/* ---- "Our Special Hill Banana" sticker badge ----
+   Replica of the reference sticker: a scalloped cream banner with a
+   thick gold border, a small pill-style "OUR SPECIAL" kicker up top,
+   big bold dark-green "HILL BANANA" lettering, and a gold brush-stroke
+   smear anchoring the bottom. */
+.hill-badge {
+  position: absolute;
+  bottom: -3%;
+  right: -10%;
+  width: 78%;
+  max-width: 340px;
+  transform: rotate(-6deg);
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
+  animation: hillBadgeFloat 4s ease-in-out infinite;
+}
+@keyframes hillBadgeFloat {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(-4deg) translateY(-8px); }
+}
+.hill-badge-shape {
+  background: var(--cream);
+  border: 5px solid var(--gold);
+  border-radius: 42% 58% 46% 54% / 58% 44% 56% 42%;
+  padding: 18px 24px 26px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+}
+.hill-badge .kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--leaf-green);
+  font-size: 12.5px;
+  letter-spacing: 2px;
+  transform: rotate(2deg);
+  background: rgba(58, 125, 44, 0.1);
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+.hill-badge .kicker .spark {
+  color: var(--gold-dark);
+  font-size: 10px;
+}
+.hill-badge h3 {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 0.95;
+  margin: 6px 0 4px;
+  color: var(--dark-green);
+  text-shadow: 2px 3px 0 rgba(246, 198, 14, 0.35);
+  transform: rotate(-2deg);
+}
+.hill-badge .underline {
+  display: block;
+  width: 84%;
+  height: 10px;
+  margin: 2px auto 0;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold) 45%, var(--gold-dark));
+  border-radius: 50% 50% 60% 40% / 70% 70% 30% 30%;
+  transform: rotate(-2deg);
+}
+.hill-badge .leaf-decor {
+  position: absolute;
+  font-size: 26px;
+  transform: rotate(-15deg);
+  top: -14px;
+  left: -10px;
+  filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.3));
+}
+.hill-badge .leaf-decor-2 {
+  top: auto;
+  bottom: -12px;
+  left: auto;
+  right: -8px;
+  transform: rotate(150deg);
+  font-size: 22px;
+}
+@media (max-width: 980px) {
+  .hill-badge { right: 2%; }
+}
+@media (max-width: 960px) {
+  .hero-feature {
+    margin-top: 30px;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Products preview grid (top of Home "Our Fruits" section) ---------- */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 26px;
+}
+
+@media (max-width: 720px) {
+  .hero-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

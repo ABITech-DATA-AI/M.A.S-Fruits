@@ -1,0 +1,114 @@
+/* ---------- Contact page ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 40px;
+}
+.contact-info {
+  background: var(--dark-green);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+.contact-info h3 {
+  font-family: var(--font-head);
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.contact-info .row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  font-size: 14.5px;
+}
+.contact-info .row .ic {
+  background: rgba(255, 255, 255, 0.12);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.form-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.field {
+  margin-bottom: 18px;
+}
+.field label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--dark-green);
+}
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e0e6da;
+  font-family: inherit;
+  font-size: 14.5px;
+  background: #fafcf7;
+}
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--leaf-green);
+}
+.form-msg {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.form-msg.success {
+  background: #e6f6e6;
+  color: #1c5c2b;
+}
+.form-msg.error {
+  background: #fbe6e6;
+  color: #a13a2e;
+}
+@media (max-width: 960px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Map ---------- */
+.map-box {
+  margin-top: 40px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef3e6;
+}
+.map-box iframe {
+  display: block;
+}
