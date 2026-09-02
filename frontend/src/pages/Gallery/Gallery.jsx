@@ -10,6 +10,10 @@ import elaichiBanana from "../../assets/gallery/7.jpg";
 import poovanBanana from "../../assets/gallery/8.jpg";
 import rawBanana from "../../assets/gallery/9.jpg";
 import "./Gallery.css";
+import harvestVideo1 from "../../assets/gallery/videos/harvest-1.mp4";
+import harvestVideo2 from "../../assets/gallery/videos/harvest-2.mp4";
+import harvestVideo3 from "../../assets/gallery/videos/harvest-3.mp4";
+import harvestVideo4 from "../../assets/gallery/videos/harvest-4.mp4";
 
 const galleryItems = [
   { id: 1, title: "Fresh from the Farm", category: "Farms", image: farmImage },
@@ -24,6 +28,13 @@ const galleryItems = [
 ];
 
 const filters = ["All", "Farms", "Harvest", "Banana Varieties"];
+
+const harvestVideos = [
+  { id: "v1", title: "Fresh Banana Harvest", src: harvestVideo1 },
+  { id: "v2", title: "Banana Farm Harvest", src: harvestVideo2 },
+  { id: "v3", title: "Fresh from the Farm", src: harvestVideo3 },
+  { id: "v4", title: "Harvest Moments", src: harvestVideo4 },
+];
 
 export default function Gallery() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -92,7 +103,6 @@ export default function Gallery() {
             </button>
           ))}
         </div>
-
         <div className="gallery-controls">
           <button type="button" onClick={() => changeSlide(-1)} aria-label="Previous image">
             <ChevronLeft size={20} />
@@ -105,6 +115,34 @@ export default function Gallery() {
             <ChevronRight size={20} />
           </button>
         </div>
+
+        <section className="gallery-video-section" aria-label="Harvest videos">
+          <div className="gallery-video-heading">
+            <span>WATCH OUR FARM</span>
+            <h2>Harvest <em>in motion</em></h2>
+            <p>Real moments from our banana farms and fresh harvest.</p>
+          </div>
+
+          <div className="gallery-video-grid">
+            {harvestVideos.map((video) => (
+              <article className="gallery-video-card" key={video.id}>
+                <div className="gallery-video-frame">
+                  <video
+                    controls
+                    playsInline
+                    preload="metadata"
+                    src={video.src}
+                    aria-label={video.title}
+                  />
+                  <span className="gallery-video-label">▶ PLAY VIDEO</span>
+                </div>
+                <h3>{video.title}</h3>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        
 
         <div className="gallery-bottom-copy">
           <span>Grown with care</span>

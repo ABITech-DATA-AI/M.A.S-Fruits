@@ -136,7 +136,7 @@
 .product-card-front-caption h3 {
   font-family: var(--font-head);
   font-size: 20px;
-  color: var(--gold);
+  color: white;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -173,5 +173,57 @@
 @media (hover: none) {
   .product-card-flip:hover .product-card-flip-inner {
     transform: none;
+  }
+}
+
+
+/* Mobile "View More" CTA — shown only on touch/small screens.
+   The whole card remains clickable and opens the nutrition/benefits modal. */
+.mobile-view-more {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .product-card-flip {
+    height: 285px;
+  }
+
+  /* Phones use a simple image card instead of the desktop hover flip. */
+  .product-card-flip:hover .product-card-flip-inner,
+  .product-card-flip:focus-visible .product-card-flip-inner {
+    transform: none;
+  }
+
+  .product-card-front-caption {
+    padding: 14px;
+    bottom: 0;
+  }
+
+  .product-card-front-caption h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+  }
+
+  .mobile-view-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 112px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--dark-green);
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .product-card-back {
+    display: none;
+  }
+
+  .product-card-flip:active {
+    transform: scale(0.985);
   }
 }

@@ -58,6 +58,7 @@ export default function Home() {
           </div>
 
           <div className="hero-center">
+
             <div className="headline">
               <span className="l1">Naturally</span>
               <span className="l2">Delicious</span>

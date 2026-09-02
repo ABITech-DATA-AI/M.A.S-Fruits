@@ -65,6 +65,12 @@ export default function Navbar() {
           })}
         </ul>
 
+        {/* Mobile-only centered brand text. The logo remains on the left and the menu remains on the right. */}
+        <div className="mobile-navbar-brand" aria-label="MAS Fruits — FRESH.NATURAL.QUALITY">
+          <span className="mobile-navbar-brand-name">MAS Fruits</span>
+          <span className="mobile-navbar-brand-tagline">FRESH.NATURAL.QUALITY</span>
+        </div>
+
         <NavLink to="/" className="brand" aria-label="MAS Fruits — Home">
           <div className="brand-badge">
             <img src={logo} alt="MAS Fruits" className="brand-logo-img" />

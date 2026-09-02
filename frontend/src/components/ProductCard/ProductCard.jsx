@@ -45,6 +45,7 @@ export default function ProductCard({ name, desc, variant, tag, image, onOpen, m
           )}
           <div className="product-card-front-caption">
             <h3>{name}</h3>
+            <span className="mobile-view-more">View More <span aria-hidden="true">→</span></span>
           </div>
         </div>
 

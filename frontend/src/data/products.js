@@ -39,7 +39,7 @@ const products = [
   {
     image: elaichiBanana,
     id: "elaichi-banana",
-    name: "Elaichi Banana",
+    name: "Ney Poovan Banana",
     desc: "Small in size, rich in aroma and naturally sweet, Elaichi Banana offers a delicate texture and delightful flavor.",
     variant: "yellow",
     tag: "Best Seller",

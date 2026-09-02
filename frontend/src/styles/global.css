@@ -35,7 +35,7 @@
    background, so any heading with nested text resets/re-applies its own
    gradient explicitly next to its component styles (see ProductModal.css
    and Gallery.css). */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h4, h5, h6 {
   background: linear-gradient(90deg, var(--leaf-green), var(--gold) 75%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -320,5 +320,74 @@ button {
 @media (max-width: 960px) {
   .split {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Global mobile safety / responsive corrections ---------- */
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .container,
+  .gallery-shell {
+    width: min(100% - 28px, 1180px);
+    max-width: 100%;
+  }
+
+  .section {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+  .section-first {
+    padding-top: 92px;
+  }
+
+  .split img,
+  .split .img-box {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 280px;
+    object-fit: cover;
+  }
+
+  .stat-row {
+    flex-wrap: wrap;
+    gap: 18px 26px;
+  }
+
+  .btn {
+    min-height: 46px;
+    padding: 12px 19px;
+    font-size: 13px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .container,
+  .gallery-shell {
+    width: calc(100% - 20px);
+  }
+
+  .section-first {
+    padding-top: 86px;
   }
 }

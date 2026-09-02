@@ -1327,3 +1327,17 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Mobile global spacing guard: fixed navbar needs clearance, but not the
+   oversized desktop 168px inner-page offset. */
+@media (max-width: 720px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .section-first {
+    padding-top: 112px;
+  }
+}

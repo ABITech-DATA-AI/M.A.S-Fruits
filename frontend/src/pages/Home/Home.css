@@ -301,3 +301,266 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+/* ==========================================================================
+   MOBILE HOME PAGE REFINEMENT
+   Removes the large desktop-only offsets that created excessive blank space
+   on phones while keeping the desktop design unchanged.
+   ========================================================================== */
+@media (max-width: 720px) {
+  .hero {
+    min-height: auto;
+    padding: 88px 0 30px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* Put the main message first on phones, then the feature image and mini cards. */
+  /* Flatten the center wrapper on phones so the headline, six variety
+     * cards and the two action buttons can be ordered independently. */
+  .hero-center {
+    display: contents;
+  }
+
+  .headline {
+    order: 1;
+    width: 100%;
+  }
+
+  .hero-feature {
+    order: 2;
+    max-width: 245px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+
+  .hero-grid-col {
+    order: 3;
+    width: 100%;
+  }
+
+  .hero-grid {
+    order: 3;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding-top: 0;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  /* Keep all six variety cards compact so they fit as exactly 3 + 3. */
+  .mini-card {
+    padding: 5px;
+    border-radius: 13px;
+  }
+
+  .mini-card .circle {
+    margin-bottom: 4px;
+    border-width: 2px;
+  }
+
+  .mini-card .label {
+    font-size: 7.5px;
+    min-height: 23px;
+    padding: 4px 2px;
+    border-radius: 9px;
+  }
+
+  .mini-card .label-icon {
+    font-size: 8px;
+  }
+
+  .headline .l1 {
+    font-size: clamp(25px, 9vw, 36px);
+  }
+
+  .headline .l2 {
+    font-size: clamp(42px, 14vw, 58px);
+  }
+
+  .headline .l3 {
+    font-size: 13px;
+    padding: 6px 14px 5px;
+    margin-top: 6px;
+  }
+
+  .hero-actions {
+    order: 4;
+    margin-top: 4px;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: min(100%, 270px);
+    justify-content: center;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .feature-circle {
+    border-width: 5px;
+  }
+
+  .hill-badge {
+    right: -8%;
+    bottom: -5%;
+    width: 76%;
+  }
+
+  .hill-badge-shape {
+    width: 175px;
+    height: 90px;
+    padding: 14px 18px 20px;
+  }
+
+  .hill-badge .kicker {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    padding: 3px 8px;
+  }
+
+  .hill-badge h3 {
+    font-size: 17px;
+  }
+
+  .hill-badge .underline {
+    height: 7px;
+  }
+
+  /* Reduce large section gaps on the home page. */
+  .section {
+    padding: 58px 0;
+  }
+
+  .section-head {
+    margin-bottom: 30px;
+  }
+
+  .section-head h2 {
+    font-size: 30px;
+  }
+
+  .section-head p {
+    font-size: 14px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .product-card-plain {
+    padding: 18px;
+  }
+
+  .product-card-plain .photo {
+    width: 115px;
+    height: 115px;
+    margin-bottom: 12px;
+  }
+
+  .split {
+    gap: 28px;
+  }
+
+  .split img,
+  .split .img-box {
+    width: 100%;
+    height: 300px;
+  }
+
+  .stat-row {
+    gap: 14px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .stat-row .stat h3 {
+    font-size: 26px;
+  }
+
+  .stat-row .stat span {
+    font-size: 10px;
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE-ONLY MAS FRUITS BRAND TITLE
+   Main name on line 1, FRESH. NATURAL. QUALITY on line 2.
+   Hidden on desktop/tablet so the existing larger-screen design is unchanged.
+   ========================================================================== */
+.mobile-brand-title {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .mobile-brand-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 10px;
+    padding: 2px 8px 0;
+    order: 0;
+    position: relative;
+    z-index: 3;
+  }
+
+  .mobile-brand-main {
+    display: block;
+    font-family: var(--font-head);
+    font-size: clamp(27px, 8.5vw, 36px);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  }
+
+  .mobile-brand-tagline {
+    display: block;
+    margin-top: 7px;
+    font-family: var(--font-head);
+    font-size: clamp(10px, 3.1vw, 13px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    color: var(--gold);
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+  }
+
+  .headline {
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mobile-brand-title {
+    margin-bottom: 8px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .mobile-brand-main {
+    font-size: 26px;
+  }
+
+  .mobile-brand-tagline {
+    font-size: 9px;
+    letter-spacing: 1.35px;
+  }
+}

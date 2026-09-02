@@ -133,6 +133,11 @@
   text-align: center;
   margin-top: 1px;
 }
+/* Mobile-only centered navbar branding. Hidden everywhere else. */
+.mobile-navbar-brand {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   background: var(--dark-green);
@@ -202,7 +207,7 @@
   .brand:hover .brand-badge {
     transform: rotate(-6deg) scale(1.05);
   }
-  .nav-toggle {
+.nav-toggle {
     display: flex;
   }
   .nav-links-mobile.open {
@@ -219,5 +224,131 @@
     max-height: 70vh;
     overflow-y: auto;
     z-index: 150;
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE NAVBAR REFINEMENT
+   Makes the logo and hamburger comfortably tappable instead of undersized.
+   ========================================================================== */
+@media (max-width: 720px) {
+  .navbar-wrap {
+    padding: 10px 10px 0;
+  }
+
+  .navbar {
+    min-height: 68px;
+    padding: 8px 12px 8px 10px;
+    border-width: 2px;
+    border-radius: 38px;
+  }
+
+  .brand {
+    min-height: 54px;
+    justify-content: center;
+  }
+
+  .brand-badge {
+    width: 58px;
+    height: 58px;
+    border-width: 3px;
+    box-shadow:
+      0 0 0 2px #ffffff,
+      0 0 0 4px var(--leaf-green),
+      0 6px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Exact mobile layout: logo left, brand text centered, menu right. */
+  .mobile-navbar-brand {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    max-width: calc(100% - 140px);
+    text-align: center;
+    pointer-events: none;
+    z-index: 5;
+    white-space: nowrap;
+  }
+
+  .mobile-navbar-brand-name {
+    font-family: var(--font-head);
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--dark-green);
+    line-height: 1.05;
+  }
+
+  .mobile-navbar-brand-tagline {
+    margin-top: 4px;
+    font-family: var(--font-head);
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1.15px;
+    color:rgb(227, 223, 0);
+    line-height: 1;
+  }
+
+.nav-toggle {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    font-size: 23px;
+  }
+
+  .nav-links-mobile.open {
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .nav-links-mobile a {
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar-wrap {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .navbar {
+    min-height: 64px;
+  }
+
+  .brand-badge {
+    width: 52px;
+    height: 52px;
+  }
+
+  .mobile-navbar-brand {
+    max-width: calc(100% - 120px);
+  }
+
+  .mobile-navbar-brand-name {
+    font-size: 16px;
+  }
+
+  .mobile-navbar-brand-tagline {
+    font-size: 6px;
+    letter-spacing: 0.85px;
+  }
+
+.nav-toggle {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+    font-size: 21px;
   }
 }
