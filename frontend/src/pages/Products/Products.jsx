@@ -22,10 +22,6 @@ export default function Products() {
         <div className="container">
           <div className="section-head">
             <h2>10 Naturally Grown Banana Varieties</h2>
-            <p>
-              Every variety is hand-picked from our own farms and hills, graded for
-              quality, and delivered fresh.
-            </p>
           </div>
 
           {hillBanana && (

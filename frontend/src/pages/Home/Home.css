@@ -331,6 +331,7 @@
   .headline {
     order: 1;
     width: 100%;
+    margin-left: -110px;
   }
 
   .hero-feature {
@@ -339,6 +340,7 @@
     width: 100%;
     margin: 0 auto;
     padding-top: 0;
+    margin-left: 10px;
   }
 
   .hero-grid-col {

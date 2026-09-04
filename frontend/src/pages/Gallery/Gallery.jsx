@@ -9,6 +9,11 @@ import yelakkiBanana from "../../assets/gallery/6.jpg";
 import elaichiBanana from "../../assets/gallery/7.jpg";
 import poovanBanana from "../../assets/gallery/8.jpg";
 import rawBanana from "../../assets/gallery/9.jpg";
+import Redbanana from "../../assets/gallery/10.jpg";
+import Redbana from "../../assets/gallery/11.jpg";
+import Redban from "../../assets/gallery/12.jpg";
+import Redba from "../../assets/gallery/13.jpg";
+
 import "./Gallery.css";
 import harvestVideo1 from "../../assets/gallery/videos/harvest-1.mp4";
 import harvestVideo2 from "../../assets/gallery/videos/harvest-2.mp4";
@@ -25,6 +30,11 @@ const galleryItems = [
   { id: 7, title: "Elaichi Banana", category: "Banana Varieties", image: elaichiBanana },
   { id: 8, title: "Poovan Banana", category: "Banana Varieties", image: poovanBanana },
   { id: 9, title: "Raw Banana", category: "Harvest", image: rawBanana },
+  { id: 10, title: "Redbanana", category: "Banana Varieties", image: Redbanana },
+  { id: 11, title: "Redbanan", category: "Banana Varieties", image: Redbana },
+  { id: 12, title: "Redbana", category: "Banana Varieties", image: Redban },
+  { id: 13, title: "Redban", category: "Banana Varieties", image: Redba },
+
 ];
 
 const filters = ["All", "Farms", "Harvest", "Banana Varieties"];

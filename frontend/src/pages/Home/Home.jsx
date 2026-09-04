@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-import ProductModal from "../../components/ProductModal/ProductModal.jsx";
 import WhatsAppIcon from "../../components/WhatsAppIcon.jsx";
 import products from "../../data/products.js";
 import homeHeroImages from "./homeHeroImages.js";
@@ -19,14 +18,12 @@ import "./Home.css";
 //  raw-banana, monthan-banana, hill-banana, nendran-banana,
 //  karpuravalli-banana, rasthali-banana
 // ============================================================================
-const FEATURED_PRODUCT_IDS = ["hill-banana", "red-banana", "elaichi-banana", "yelakki-banana"];
+const FEATURED_PRODUCT_IDS = ["hill-banana", "red-banana", "nendran-banana", "yelakki-banana"];
 
 export default function Home() {
   // Resolve the 4 ids above into full product objects, in that order.
   const featuredProducts = FEATURED_PRODUCT_IDS.map((id) => products.find((p) => p.id === id)).filter(Boolean);
 
-  // Which product's nutrition/benefits popup is open (null = closed).
-  const [activeProduct, setActiveProduct] = useState(null);
 
   return (
     <>
@@ -147,11 +144,10 @@ export default function Home() {
           <div className="section-head">
             <div className="eyebrow">Our Fruits</div>
             <h2>Fresh Banana Varieties</h2>
-            <p>A few of our favourite varieties — picked fresh and packed with flavour.</p>
           </div>
           <div className="products-grid">
             {featuredProducts.map((p) => (
-              <ProductCard key={p.id} {...p} mode="plain" onOpen={() => setActiveProduct(p)} />
+              <ProductCard key={p.id} {...p} mode="plain" />
             ))}
           </div>
           <div style={{ textAlign: "center", marginTop: 40 }}>
@@ -215,8 +211,6 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
-      <ProductModal product={activeProduct} onClose={() => setActiveProduct(null)} />
     </>
   );
 }

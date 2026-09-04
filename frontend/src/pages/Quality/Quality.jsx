@@ -21,7 +21,7 @@ const journey = [
   {
     number: "01",
     title: "Direct Farm Sourcing",
-    text: "We work directly with trusted growers and sourcing regions to select bananas with the freshness and characteristics our customers expect.",
+    text: "We work directly with trusted growers and sourcing regions to select bananas with the freshness  our customers expect.",
     icon: Leaf,
   },
   {
@@ -51,7 +51,7 @@ const journey = [
   {
     number: "06",
     title: "Bulk Order Check",
-    text: "Whether you need 100 kg or a larger commercial quantity, orders are prepared with attention to the requested variety, quantity and condition.",
+    text: "Whether you need 100 kg or a larger commercial quantity, orders are prepared with attention to the requested variety.",
     icon: PackageCheck,
   },
 ];
@@ -67,10 +67,10 @@ const standards = [
 
 const sourcingAreas = [
   "Yelagiri",
+  "Sathiyamangalam",
   "Jawadhu Hills",
-  "Puthur Nadu",
-  "Ooty",
-  "Kodaikanal",
+  "Harur",
+  "Trichy",
   "Andhra Pradesh",
 ];
 

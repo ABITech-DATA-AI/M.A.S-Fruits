@@ -8,11 +8,11 @@ import nendranBanana from "../../assets/images/nendran.jpg";
 import "./Farms.css";
 
 const farms = [
-  { name: "Hillcrest Farm", loc: "Kotagiri Hills, Tamil Nadu", desc: "Home of our signature Hill Banana, grown at 1,200m elevation.", image: karpuravalaiBanana },
-  { name: "Riverbend Farm", loc: "Coimbatore District", desc: "Specialises in Red Banana and Elaichi Banana varieties.", image: redBanana },
-  { name: "Sunrise Grove", loc: "Erode District", desc: "Our largest farm, producing Yelakki and Poovan bananas.", image: yelakkiBanana },
-  { name: "Green Valley Estate", loc: "Nilgiris", desc: "Focused on organic Raw and Monthan banana cultivation.", image: monthanBanana },
-  { name: "Hillside Farm", loc: "Yelagiri", desc: "A scenic hill region surrounded by fertile agricultural landscapes.", image: hillBanana },
+  { name: "Yelagiri Hills", loc: "Tirupattur District", desc: "Home of our signature Hill Banana, grown at 1,200m elevation.", image: karpuravalaiBanana },
+  { name: "Sathiyamangalam Farm", loc: "Salem District", desc: "Specialises in Red Banana and Elaichi Banana varieties.", image: redBanana },
+  { name: "Jawadhu Hills", loc: "Thiruvannamalai District", desc: "Our largest farm, producing Yelakki and Poovan bananas.", image: yelakkiBanana },
+  { name: "Green Valley Estate", loc: "Harur District", desc: "Focused on organic Raw and Monthan banana cultivation.", image: monthanBanana },
+  { name: "Ananthpur", loc: "Andhra Pradesh", desc: "A scenic hill region surrounded by fertile agricultural landscapes.", image: hillBanana },
   { name: "Tiruchirappalli Farm", loc: "Tiruchirappalli", desc: "Premium banana-growing lands along the fertile Cauvery region.", image: nendranBanana },
 
 ];
