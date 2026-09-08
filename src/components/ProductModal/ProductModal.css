@@ -1,0 +1,184 @@
+/* ---------- Product details popup (nutrition + benefits) ----------
+   Sized to fit its content without ever needing an internal scrollbar —
+   compact paddings/fonts, no max-height/overflow. */
+.pm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 30, 15, 0.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  z-index: 1000;
+  animation: pm-fade-in 0.18s ease;
+}
+@keyframes pm-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.pm-box {
+  background: var(--white, #fff);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 460px;
+  padding: 18px 22px 20px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  animation: pm-pop-in 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes pm-pop-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.pm-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: #f4f9ee;
+  color: var(--dark-green, #0f3d1a);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.pm-close:hover {
+  background: #e6efdc;
+  transform: scale(1.08);
+}
+.pm-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.pm-photo {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--gold, #f6c60e);
+  background: #fbf8ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pm-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pm-tag {
+  display: inline-block;
+  background: var(--gold, #f6c60e);
+  color: var(--dark-green, #0f3d1a);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 20px;
+  margin-bottom: 4px;
+}
+.pm-header h3 {
+  font-family: var(--font-head);
+  color: var(--dark-green, #0f3d1a);
+  font-size: 19px;
+  margin-bottom: 2px;
+}
+.pm-desc {
+  font-size: 12.5px;
+  color: #6a7a6a;
+  line-height: 1.4;
+}
+.pm-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eef3e6;
+}
+.pm-section h4 {
+  font-family: var(--font-head);
+  color: var(--dark-green, #0f3d1a);
+  font-size: 13.5px;
+  margin-bottom: 8px;
+}
+.pm-section h4 span {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 10.5px;
+  color: #8a988a;
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  -webkit-text-fill-color: #8a988a;
+}
+.pm-nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.pm-nutri-item {
+  background: #f4f9ee;
+  border-radius: 10px;
+  padding: 7px 6px;
+  text-align: center;
+}
+.pm-nutri-value {
+  display: block;
+  font-family: var(--font-head);
+  color: var(--leaf-green, #3a7d2c);
+  font-size: 13px;
+  font-weight: 700;
+}
+.pm-nutri-label {
+  display: block;
+  font-size: 9.5px;
+  color: #6a7a6a;
+  margin-top: 1px;
+}
+.pm-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pm-benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #3a4a3a;
+  line-height: 1.4;
+}
+.pm-check {
+  flex: none;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--leaf-green, #3a7d2c);
+  color: #fff;
+  font-size: 9.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+@media (max-width: 420px) {
+  .pm-header {
+    gap: 10px;
+  }
+  .pm-photo {
+    width: 60px;
+    height: 60px;
+  }
+  .pm-nutrition-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .pm-nutri-item {
+    padding: 6px 4px;
+  }
+}

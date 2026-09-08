@@ -1,0 +1,37 @@
+/* ---------- Farms page ---------- */
+.farm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+}
+.farm-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.farm-card .img {
+  height: 190px;
+  overflow: hidden;
+}
+.farm-card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.farm-card:hover .img img {
+  transform: scale(1.06);
+}
+.farm-card .body {
+  padding: 20px;
+}
+.farm-card h3 {
+  font-family: var(--font-head);
+  color: var(--dark-green);
+  margin-bottom: 6px;
+}
+.farm-card p {
+  font-size: 14px;
+  color: #6a7a6a;
+}

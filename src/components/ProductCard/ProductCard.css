@@ -1,0 +1,229 @@
+/* =========================================================================
+   PRODUCT CARD — "plain" mode (Home page)
+   Simple, non-flipping card: image, name, description.
+   ========================================================================= */
+.product-card-plain {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: 1px solid #eef3e6;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.product-card-plain:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 61, 26, 0.2);
+}
+.product-card-plain .photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  overflow: hidden;
+  border: 4px solid var(--gold);
+  background: #fbf8ec;
+}
+.product-card-plain h3 {
+  font-family: var(--font-head);
+  font-size: 19px;
+  color: var(--dark-green);
+  margin-bottom: 6px;
+}
+.product-card-plain p {
+  font-size: 13.5px;
+  color: #6a7a6a;
+  line-height: 1.5;
+}
+.product-card-plain .tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--gold);
+  color: var(--dark-green);
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 20px;
+}
+
+/* =========================================================================
+   PRODUCT CARD — "flip" mode (Products page, 9-card grid)
+   Front: image fills the entire card, name overlaid on top of the image.
+   Back (on hover): description, revealed with a 3D flip.
+   ========================================================================= */
+.product-card-flip {
+  background: transparent;
+  cursor: pointer;
+  perspective: 1200px;
+  height: 300px;
+}
+.product-card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.product-card-flip:hover .product-card-flip-inner,
+.product-card-flip:focus-visible .product-card-flip-inner {
+  transform: rotateY(180deg);
+}
+.product-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #eef3e6;
+  overflow: hidden;
+}
+.product-card-flip:hover .product-card-face,
+.product-card-flip:focus-visible .product-card-face {
+  box-shadow: 0 20px 40px rgba(15, 61, 26, 0.2);
+}
+
+/* ---- FRONT face: full-bleed image with name overlaid ---- */
+.product-card-front {
+  background: #fbf8ec;
+}
+.product-card-bg-img,
+.product-card-bg-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-card-bg-svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #fbf8ec, #f4f9ee);
+}
+.product-card-front::after {
+  /* darken the bottom of the image so the overlaid name stays readable */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 25, 10, 0.85) 0%, rgba(6, 25, 10, 0.35) 32%, transparent 62%);
+}
+.product-card-front .tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  background: var(--gold);
+  color: var(--dark-green);
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 4px 9px;
+  border-radius: 20px;
+}
+.product-card-front-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 18px;
+  text-align: center;
+}
+.product-card-front-caption h3 {
+  font-family: var(--font-head);
+  font-size: 20px;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* ---- BACK face ---- */
+.product-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(160deg, var(--dark-green), var(--mid-green));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  gap: 10px;
+}
+.product-card-back h3 {
+  font-family: var(--font-head);
+  font-size: 19px;
+  color: var(--gold);
+}
+.product-card-back p {
+  font-size: 13.5px;
+  color: #e4efe0;
+  line-height: 1.55;
+}
+.product-card-back .view-details {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.2px;
+}
+
+/* Touch devices can't hover — keep the front face as the resting state. */
+@media (hover: none) {
+  .product-card-flip:hover .product-card-flip-inner {
+    transform: none;
+  }
+}
+
+
+/* Mobile "View More" CTA — shown only on touch/small screens.
+   The whole card remains clickable and opens the nutrition/benefits modal. */
+.mobile-view-more {
+  display: none;
+}
+
+@media (max-width: 560px) {
+  .product-card-flip {
+    height: 285px;
+  }
+
+  /* Phones use a simple image card instead of the desktop hover flip. */
+  .product-card-flip:hover .product-card-flip-inner,
+  .product-card-flip:focus-visible .product-card-flip-inner {
+    transform: none;
+  }
+
+  .product-card-front-caption {
+    padding: 14px;
+    bottom: 0;
+  }
+
+  .product-card-front-caption h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+  }
+
+  .mobile-view-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 112px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--dark-green);
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  }
+
+  .product-card-back {
+    display: none;
+  }
+
+  .product-card-flip:active {
+    transform: scale(0.985);
+  }
+}
